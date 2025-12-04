@@ -21,7 +21,7 @@
     }
 }
 #National-ID-card {
-    background-color: aqua;
+   background: linear-gradient(to bottom, #02f2ff, #445afd);
     position: relative;
     width: 95%;
     max-width: 610px;
@@ -49,6 +49,7 @@ font-size: 20px;
     position: relative;
     left: 110px;
     top: 10px;
+       text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 
     /* ปรับขนาดตามหน้าจออัตโนมัติ */
     font-size: clamp(16px, 2.5vw, 23px);
@@ -120,7 +121,11 @@ font-size: 20px;
     bottom: 0;
     right: 0;
     border-radius: 20px;
+
+    /* shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
+
 
 .date-input, .type-input, .Breed-input, .Gender-input, .Color-input{
     position: relative;
@@ -259,6 +264,8 @@ input::placeholder {
     #input input {
         width: 90%;
     }
+
+
 /* git init
 git add .
 git commit -m "first commit"
