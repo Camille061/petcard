@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+#National-ID-card {
+    background-color: aqua;
+    position: relative;
+    max-width: 610px;
+    height: 350px;
+    border-radius: 20px;
+     font-family: "Sarabun", sans-serif;
+   
+}
+
+.head-card {
+position: relative; 
+top: 10px; 
+left: 100px;
+font-size: 20px;
+ font-family: "Sarabun", sans-serif;
+
+}
+
+.Pet-National-ID-Card{
+color: rgb(17, 0, 251);
+font-size: 23px;
+font-weight: bold;
+position: relative;
+left: 110px;
+top: 10px;
+ font-family: "Sarabun", sans-serif;
+}
+
+#number-pet{
+    position: relative;
+    top: 10px;
+    left: 100px;
+    font-size: 16px;
+     font-family: "Sarabun", sans-serif;
+}
+
+#number {
+        position: relative;
+    top: 10px;
+    left: 100px;
+     font-size: 19px;   
+      font-family: "Sarabun", sans-serif;
+}
+
+.Identification-Number {
+        position: relative;
+    top: 2px;
+    left: 100px;
+}
+/* ชื่อ */
+.Name-and-surname-input {
+        position: relative;
+    top: 20px;
+    left: 75px;
+}
+
+#Name-and-surname {
+        position: relative;
+    top: 20px;
+    left: 75px;
+    font-size: 22px;
+}
+
+.Name-input, .Last-name-input, .date-eng {
+        position: relative;
+    top: 15px;
+    left: 75px;
+    color: blue;
+}
+
+#Name {
+    position: relative;
+    top: 15px;
+    left: 75px; 
+    color: blue;
+}
+
+#Last-name {
+ position: relative;
+    top: 15px;
+    left: 75px; 
+    color: blue;
+}
+
+#pet-image {
+    width: 130px;
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 20px;
+}
+
+.date-input, .type-input, .Breed-input, .Gender-input, .Color-input{
+    position: relative;
+    top: 15px;
+    left: 75px;
+}
+
+/* วันเกิด */
+#day-th, #month-th, #year-th {
+ position: relative;
+    top: 15px;
+    left: 75px; 
+}
+
+/* ประเภท สายพีนธู์ */
+#type, #Breed {
+    position: relative;
+    top: 15px;
+    left: 75px; 
+    font-family: "Sarabun", sans-serif;
+    color: blue;
+    font-size: x-large;
+}
+/* เพศ สี */
+ #Gender, #Color {
+    position: relative;
+    top: 15px;
+    left: 75px; 
+    font-family: "Sarabun", sans-serif;
+        color: blue;
+        font-size: large;
+
+ }
+
+ /* บาร์โค้ด */
+.barcode {
+position: absolute;
+left: 0;
+bottom: 0px;
+width: 50px;
+height: 250px;
+border-radius: 0 0 10px 10px;
+}
+
+.chip-img {
+    position: absolute;
+    left: 1px;
+    top: 110px;
+     width: 150px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.logo {
+     position: absolute;
+    right: 500px;
+    bottom: 260px;
+     width: 120px;
+    height: 90px;
+    border-radius: 20px;
+}
+body {
+background-color: rgb(134, 134, 134);
+}
+
+#submit, #addres {
+     position: relative;
+    top: 15px;
+    left: 75px; 
+}
+
+input::placeholder {
+     font-family: "Sarabun", sans-serif;
+}
+
+.getdate, .getdate-eng {
+      position: relative;
+    top: 15px;
+    left: 75px; 
+}
+
+.date-output {
+        position: relative;
+    top: 15px;
+    left: 75px;
+}
+
+#NumberPet,
+#NameAndSurnameTh,
+#NameEn,
+#SurnameEn,
+#day-thai,
+#month-thai,
+#year-thai,
+#Type,
+#BreedInput,
+#GenderPet,
+#ColorPet,
+#image-input,
+#AddressOutput {
+    padding: 8px 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+}
+
+#submit {
+    padding: 10px 20px;
+    background: #2f80ed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: #1c60c7;
+}
+
+#download {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#download:hover {
+    transform: scale(1.1);
+    background-color:#c7c7c7;
+}

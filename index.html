@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PetCard</title>
+</head>
+
+<body>
+    <div id="National-ID-card" hidden>
+        <img class="logo" src="img/logo.png" alt="">
+        <span class="head-card">บัตรประจำตัวประชากรสัตว์เลี้ยง</span>
+        <span class="Pet-National-ID-Card">Pet National ID Card</span> <br>
+        <span id="number-pet">เลขประจำตัวสัตว์เลี้ยง</span>
+        <span id="number">0000000000</span> <br>
+        <span class="Identification-Number">Identification Number</span> <br>
+        <span class="Name-and-surname-input">ชื่อตัวและชื่อสกุล</span>
+        <span id="Name-and-surname">ชื่อ-สกุล</span> <br>
+        <span class="Name-input">Name</span>
+        <span id="Name">-</span> <br>
+        <span class="Last-name-input">Last Name</span>
+        <span id="Last-name">-</span> <br>
+        <span class="date-input">เกิดวันที่</span>
+        <span id="day-th">00</span>
+        <span id="month-th">ม.ค</span>
+        <span id="year-th">0000</span> <br>
+        <span class="date-eng">Date of Birth</span>
+        <span class="type-input">ประเภท</span>
+        <span id="type">-</span>
+        <span class="Breed-input">สายพันธุ์</span>
+        <span id="Breed">-</span> <br>
+        <span class="Gender-input">เพศ</span>
+        <span id="Gender">-</span>
+        <span class="Color-input">สี</span>
+        <span id="Color">-</span> <br>
+        <span class="getdate">10 เม.ย 2900</span>
+        <span style="color: blue;" class="getdate-eng">10 Apr. 3443</span> <br>
+        <span class="date-output">วันออกบัตร</span>
+        <span style="color: blue;" class="date-output"> Date of Issue</span> <br>
+        <span class="date-output">ที่อยู่</span>
+        <span id="addres">-</span>
+
+
+
+
+        <!-- รูป -->
+        <img class="barcode" src="img/barcode.png">
+        <!-- <img class="chip-img" src="img/chip.png" alt=""> -->
+        <img id="pet-image" src="img/profile.png" alt="">
+    </div>
+
+    <div id="input">
+        <input id="NumberPet" type="text" placeholder="เลขประจำตัวสัตว์เลี้ยง">
+        <input id="NameAndSurnameTh" type="text" placeholder="ชื่อและนามสกุล"> <br>
+        <input id="NameEn" type="text" placeholder="ชื่อภาษาอังกฤษ">
+        <input id="SurnameEn" type="text" placeholder="นามสกุลภาษาอังกฤษ"> <br>
+        <input id="day-thai" type="number" placeholder="วันเกิด" size="3" min="1" max="31">
+        <input id="month-thai" type="number" placeholder="เดือนเกิด" size="3" min="1" max="12">
+        <input id="year-thai" type="number" placeholder="ปีเกิด" size="3" min="2500" max="2568" value="2500">
+        <input id="Type" type="text" placeholder="ประเภท">
+        <input id="BreedInput" type="text" placeholder="สายพันธุ์"> <br>
+        <input id="GenderPet" type="text" placeholder="เพศ">
+        <input id="ColorPet" type="text" placeholder="สี"> <br>
+        <input id="image-input" type="file">
+        <input type="text" id="AddressOutput" placeholder="ที่อยู่">
+        <button id="submit" onclick=" ConvertData()">Submit</button>
+    </div>
+   <button id="form">กรอกข้อมูล</button>
+    <script>
+        // input
+        const NumberPet = document.getElementById("NumberPet")
+        const NameAndSurnameTh = document.getElementById("NameAndSurnameTh")
+        const NameEn = document.getElementById("NameEn")
+        const SurnameEn = document.getElementById("SurnameEn")
+        const Breed = document.getElementById("BreedInput")
+        const DateEn = document.getElementById("DateEn")
+        const Type = document.getElementById("Type")
+        const button = document.getElementById("submit")
+        const ImageInput = document.getElementById("image-input")
+        // วันเเกิดไทย
+        const DayTh = document.getElementById("day-thai")
+        const MonthTh = document.getElementById("month-thai")
+        const YearTh = document.getElementById("year-thai")
+        // เพศ สี
+        const GenderPet = document.getElementById("GenderPet")
+        const ColorPet = document.getElementById("ColorPet")
+        // ที่อยู่
+        const AddressOutput = document.getElementById("AddressOutput")
+
+        // ข้อมูลในบัตร
+        const number = document.getElementById("number")
+        const Name_and_surname = document.getElementById("Name-and-surname")
+        const Name = document.getElementById("Name")
+        const LastName = document.getElementById("Last-name")
+        const TypeData = document.getElementById("type")
+        const BreedData = document.getElementById("Breed")
+        const ImageCard = document.getElementById("pet-image")
+        const DayCard = document.getElementById("day-en")
+        const MonthCard = document.getElementById("month-en")
+        const YearCard = document.getElementById("year-en")
+        const Gender_input = document.getElementById("Gender")
+        const Color_input = document.getElementById("Color")
+        const Day_Th = document.getElementById("day-th")
+        const Month_Th = document.getElementById("month-th")
+        const Year_Th = document.getElementById("year-th")
+        const GetDay = document.getElementById("getdate-one")
+        const GetMonth = document.getElementById("getdate-month")
+        const GetYear = document.getElementById("getdate-year")
+        const Address = document.getElementById("addres")
+        const Redo = document.getElementById("form")
+
+        // บัตร
+        const NationalIdCard = document.getElementById("National-ID-card")
+        const InputCard = document.getElementById("input") //แบบฟอร์ม
+        const DownloadBtn = document.getElementById("download")
+        DownloadBtn.hidden = true
+        
+    Redo.onclick = () => {
+        NationalIdCard.hidden = true
+        InputCard.hidden = false
+        Redo.hidden = false
+    }
+        
+        //  ฟังชั่นแปลงข้อมูล
+        function ConvertData() {
+            NationalIdCard.hidden = false
+            InputCard.hidden = true
+            // เลขบัตร 
+            number.innerHTML = NumberPet.value
+            Name_and_surname.innerHTML = NameAndSurnameTh.value
+            Name.innerHTML = NameEn.value
+            LastName.innerHTML = SurnameEn.value
+            TypeData.innerHTML = Type.value
+            BreedData.innerHTML = Breed.value
+            Gender_input.innerHTML = GenderPet.value
+            Color_input.innerHTML = ColorPet.value
+            Day_Th.innerHTML = DayTh.value
+            Year_Th.innerHTML = YearTh.value
+            Address.innerHTML = AddressOutput.value
+
+            const months = ["ม.ค", "ก.พ", "มี.ค", "เม.ย", "พ.ค", "มิ.ย",
+                "ก.ค", "ส.ค", "ก.ย", "ต.ค", "พ.ย", "ธ.ค"];
+
+            if (MonthTh.value >= 1 && MonthTh.value <= 12) {
+                Month_Th.innerHTML = months[MonthTh.value - 1];
+            } else {
+                Month_Th.innerHTML = "---";
+            }
+
+            // กันคนพิสดารใส่เดือนกุมภา30วัน
+            if (MonthTh.value == 2 &&
+                DayTh.value > 29) {
+                alert("กุมภามีถึง30วันหรอ?")
+                DayTh.value = 0
+                Day_Th.innerHTML = 0
+            }
+
+            // ใส่ภาพในบัตร
+            if (ImageInput.files && ImageInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    ImageCard.src = e.target.result;
+                }
+                reader.readAsDataURL(ImageInput.files[0]);
+            }
+        }
+
+    </script>
+
+    <div>
+        <!-- ปุ่มโหลด -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <button id="download" onclick="DownloadCard()">โหลดบัตร</button>
+     
+        <script>
+            function DownloadCard() {
+                const card = document.getElementById("National-ID-card");
+
+                html2canvas(card, {
+                    scale: 3,
+                    useCORS: true,
+                    allowTaint: true
+                }).then(canvas => {
+
+                    const link = document.createElement("a");
+                    link.download = "Pet-ID-Card.png";
+                    link.href = canvas.toDataURL("image/png", 1.0);
+                    link.click();
+
+                }).catch(err => {
+                    console.log(err);
+                });
+            }
+        </script>
+
+</body>
+
+</html>
